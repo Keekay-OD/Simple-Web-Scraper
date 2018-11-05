@@ -25,7 +25,7 @@ f = open(filename, "w")
 
 
 
-headers = "brand, product_name, shipping\n"
+headers = "Brand, Model, Price\n"
 
 f.write(headers)
 
