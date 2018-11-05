@@ -1,0 +1,26 @@
+import bs4
+from urllib.request import urlopen as uReq
+from bs4 import BeautifulSoup as soup
+
+
+
+
+
+myurl = 'https://www.walmart.com/browse/electronics/tvs/3944_1060825_447913'
+uClient = uReq(myurl)
+page_html = uClient.read()
+uClient.close()
+page_soup = soup(page_html, "html.parser")
+
+containers = page_soup.findAll("div",{"class":"item-container"})
+
+
+filename = "products.csv"
+f = open(filename, "w")
+
+headers = "brand, product_name, shipping\n"
+
+f.write("")
+
+for containers in containers:
+	brand = container.
